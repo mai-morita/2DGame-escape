@@ -15,8 +15,8 @@ public class OnMouseDown : MonoBehaviour {
     }
 
     public void ShowPanel() {
-        showObject.SetActive(true);
         Debug.Log("opened");
+        showObject.SetActive(true);
     }
 
     public void HidePanel() {

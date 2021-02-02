@@ -29,5 +29,4 @@ public class ChangePanelOnClick : MonoBehaviour {
         int nextPanelNumber = (panelNumber + TOTAL_PANELS - 1)%TOTAL_PANELS;
         this.transform.localPosition = new Vector2(-(nextPanelNumber * PANEL_DISTANCE), currentPosition.y );
     }//panelNumber=1の時は割る数字が0になってしまうため、TOTAL_PANELSを足す事で補う。
-
 }
