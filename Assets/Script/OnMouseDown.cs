@@ -15,13 +15,12 @@ public class OnMouseDown : MonoBehaviour {
     }
 
     public void ShowPanel() {
-        Debug.Log("opened");
         showObject.SetActive(true);
+        Debug.Log("opened");
     }
 
     public void HidePanel() {
         showObject.SetActive(false);
         Debug.Log("closed");
     }
-
 }

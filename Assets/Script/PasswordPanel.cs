@@ -7,9 +7,9 @@ using System.Linq;
 public class PasswordPanel : MonoBehaviour {
     
     // パスワードを入れる配列
-    int[] pwArray= new int[] {0, 1, 2, 3};
+    int[] pwArray= new int[] {0, 1, 2, 3, 4, 5, 6};
     // パスワードの解答
-    int[] correct = new int[] {2, 0, 0, 1};
+    int[] correct = new int[] {4, 5, 6};
     // 画像の配列
     public Image[] buttons;
     // 画像ソースの配列
@@ -28,7 +28,7 @@ public class PasswordPanel : MonoBehaviour {
         int tmp = pwArray[position];
         Debug.Log("111");
         tmp++;
-        tmp %= 4;
+        tmp %= 7;
         pwArray[position] = tmp;
         Debug.Log(position + "::" + tmp);
     }

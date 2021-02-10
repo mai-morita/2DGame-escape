@@ -10,7 +10,7 @@ public class ChangePanelOnClick : MonoBehaviour {
     //左のボタンを押した時、x値が-1500ずつ移動する
     //一番右（または左）に移動した時、矢印をなくす（ループでもいいかも）
 
-    int PANEL_DISTANCE = 1500;
+    int PANEL_DISTANCE = 1242;
     int TOTAL_PANELS = 4;
 
     public void RightArrow() {
