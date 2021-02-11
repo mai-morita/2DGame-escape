@@ -25,14 +25,9 @@ public class ItemBox : MonoBehaviour {
         boxes[index].SetActive(true);
     }
 
-    // public  void CanSetItem(Item.Type type) {
-    //     int index = (int)type;
-    //     return boxes[index].activeSelf;
-    // }
-
-    // public void UseItem(Item.Type type) {
-    //     int index = (int)type;
-    //     boxes[index].SetActive(false);
-    // }
+    public void ReleaseItem(Item.Type type) {
+        int index = (int)type;
+        boxes[index].SetActive(false);
+    }
 }
 
