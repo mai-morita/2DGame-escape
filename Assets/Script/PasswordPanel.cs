@@ -21,9 +21,7 @@ public class PasswordPanel : MonoBehaviour {
     //パスワードボタンが押されたら呼ばれる。positionはボタン番号を表す。
  
     void ChangeNumber(int position) {
-        // Debug.Log("000");
         int tmp = enteredPassword[position];
-        // Debug.Log("111");
         tmp++;
         tmp %= 7;
         enteredPassword[position] = tmp;

@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 
 public class FadeCanvas : MonoBehaviour {
 
-    private bool fadeIn = false;
+    public bool fadeIn = false;
     private bool fadeOut = false;
     public bool keepWhite = false;
 
-    float fadeSpeed = 0.005f;
+    public float fadeSpeed;
     float red, green, blue, alpha;
     float count = 0;
     Image fadeImage;  
@@ -29,7 +29,6 @@ public class FadeCanvas : MonoBehaviour {
 
     public void FadeFlag() {
         fadeOut = true;
-        Debug.Log("222");
     }  
 
     void Update () {
@@ -57,10 +56,14 @@ public class FadeCanvas : MonoBehaviour {
     void KeepWhite() {
         fadeImage.enabled = true;
         count += fadeSpeed;
-        Debug.Log(alpha);
-        Debug.Log(keepWhite);
-        if (SceneManager.GetActiveScene().name == "MainScene") {
-            ChangeScene();
+        string nextScene = null;
+        if (SceneManager.GetActiveScene().name == "1stScene") {
+            nextScene = "2ndScene";
+        } else if (SceneManager.GetActiveScene().name == "2ndScene") {
+            nextScene = "3rdScene";
+        }
+        if(nextScene != null) {
+            SceneManager.LoadScene(nextScene);
         }
         if(count >= 1) {
             count = 0;
@@ -69,7 +72,6 @@ public class FadeCanvas : MonoBehaviour {
     }
 
     void FadeIn() {
-        Debug.Log("aa");
         fadeImage.enabled = true;
         alpha -= fadeSpeed;
         SetAlpha();
@@ -85,9 +87,5 @@ public class FadeCanvas : MonoBehaviour {
 
     void SetAlpha() {
        fadeImage.color = new Color(red, green, blue, alpha);
-    }
-
-    void ChangeScene()　{
-        SceneManager.LoadScene("NextScene");
     }
 }
