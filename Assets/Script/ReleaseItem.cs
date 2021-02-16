@@ -13,10 +13,12 @@ public class ReleaseItem : MonoBehaviour {
         card3 = 2, 
         card4 = 3, 
         card5 = 4,
-        card6 = 5
+        card6 = 5,
+        glasses = 6,
+        key = 7
     }
     public Type type;
-
+    
     public void ItemHide() {
         ItemBox.instance.SetItem(gameObject); //Itemの格納
         gameObject.SetActive(false);
