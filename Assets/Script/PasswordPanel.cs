@@ -11,7 +11,7 @@ public class PasswordPanel : MonoBehaviour {
     
     public Image[] buttons;  //画像の配列
     public Sprite[] sprites;  //画像ソースの配列
-    public GameObject currentFlag;
+    public GameObject usePanel;
 
     public void OnClickPassword(int position) {
         Debug.Log("password" + position);
@@ -38,8 +38,8 @@ public class PasswordPanel : MonoBehaviour {
     public void OnClickEnter() {
         if (enteredPassword.Intersect(correctPassword).Count() == enteredPassword.Count()) {
             Debug.Log("CLEAR");
-            FadeCanvas fadePanel = currentFlag.GetComponent<FadeCanvas>();
-            fadePanel.FadeFlag();
+            FadeCanvas fadePanel = usePanel.GetComponent<FadeCanvas>();
+            fadePanel.StartFadeOut();
             //フェードアウト開始
         } else {
             Debug.Log("MISS");

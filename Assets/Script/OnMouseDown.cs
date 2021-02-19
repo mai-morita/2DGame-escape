@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OnMouseDown : MonoBehaviour {
 
@@ -8,14 +9,21 @@ public class OnMouseDown : MonoBehaviour {
 
     public string showObjectName;
     GameObject showObject;
+    public GameObject parentObject;
+    public GameObject usePanel;
 
-    public void Start() {
+
+    public void Awake() {
         showObject = GameObject.Find(showObjectName);
         showObject.SetActive(false);
     }
 
     public void ShowPanel() {
-        showObject.SetActive(true);
+        parentObject = showObject.transform.parent.gameObject;
+        bool onParent = parentObject.activeSelf;
+        if(onParent) {
+            showObject.SetActive(true);
+        }
     }
 
     public void HidePanel() {

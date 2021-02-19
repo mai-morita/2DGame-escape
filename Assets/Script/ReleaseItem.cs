@@ -20,7 +20,9 @@ public class ReleaseItem : MonoBehaviour {
     public Type type;
     
     public void ItemHide() {
-        ItemBox.instance.SetItem(gameObject); //Itemの格納
-        gameObject.SetActive(false);
+        bool successed = ItemBox.instance.SetItem(gameObject); //Itemの格納
+        if(successed) {
+            gameObject.SetActive(false);
+        }
     }
 }

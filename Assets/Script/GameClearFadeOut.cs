@@ -1,22 +1,26 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;//UIを使用可能にする
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-//フェードインとフェードアウトに関するスクリプト
+public class GameClearFadeOut : MonoBehaviour {
 
-public class FadeCanvas : MonoBehaviour {
-
-    public bool fadeIn = false;
+    private bool fadeIn = false;
     private bool fadeOut = false;
     private bool keepWhite = false;
 
     public float fadeSpeed;
     float red, green, blue, alpha;
     float count = 0;
-    Image fadeImage;  
+    Image fadeImage; 
+    public GameObject usePanel;
+
+    public void CanUseItem() {
+        if(ItemBox.instance.HasKey()){
+            StartFadeOut();
+        }
+    }
 
     void Start() {
         fadeImage = GetComponent<Image> ();
@@ -30,9 +34,6 @@ public class FadeCanvas : MonoBehaviour {
     public void StartFadeOut() {
         fadeImage.enabled = true;
         fadeOut = true;
-    }  
-    public void StartFadeIn() {
-        fadeIn = true;
     }
 
     void Update () {
@@ -59,14 +60,16 @@ public class FadeCanvas : MonoBehaviour {
     void KeepWhite() {
         fadeImage.enabled = true;
         count += fadeSpeed;
-        
+        if (SceneManager.GetActiveScene().name == "2ndScene") {
+            SceneManager.LoadScene("1stScene");
+        }
         if(count >= 1) {
             count = 0;
-            keepWhite = false;
+            fadeIn = false;
         }
     }
 
-    void FadeIn() {
+    void FadeIn() {                                                                                                               
         fadeImage.enabled = true;
         alpha -= fadeSpeed;
         SetAlpha();
@@ -78,11 +81,5 @@ public class FadeCanvas : MonoBehaviour {
 
     void SetAlpha() {
        fadeImage.color = new Color(red, green, blue, alpha);
-    }
-
-    public void CanUseItem() {
-        if(ItemBox.instance.HasKey()){
-            StartFadeOut();
-        }
     }
 }

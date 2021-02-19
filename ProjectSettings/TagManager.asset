@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - stored
+  - nextQuestionitems
+  - finishedQuestionitems
+  - story
+  - KeyItem
   layers:
   - Default
   - TransparentFX

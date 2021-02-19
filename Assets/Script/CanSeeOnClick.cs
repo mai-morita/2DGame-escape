@@ -14,7 +14,7 @@ public class CanSeeOnClick : MonoBehaviour {
         }
     }
 
-    public void GetItem() {
+    public void GetGlasses() {
         ItemBox.instance.SetItem(gameObject); //Itemの格納
         gameObject.SetActive(false);
         foreach (GameObject item in storeditems) {
@@ -22,15 +22,8 @@ public class CanSeeOnClick : MonoBehaviour {
         }
     }
 
-    // public void ReleaseItem() {
-    //     ItemBox.instance.ReleaseItem(gameObject); 
-    //     gameObject.SetActive(true);
-    //     foreach (GameObject item in storeditems) {
-    //         item.SetActive(false);
-    //     }
-    // }
-
-//  初期値:カードは非表示にする
-//  眼鏡を所得した時:カードが表示される
-//  眼鏡を戻した時:落ちているカードが非表示・アイテムボックスの配列の中身をDestroyする(ReleaseItem.Script?)
+    public void GetKey() {
+        ItemBox.instance.SetItem(gameObject); //Itemの格納
+        gameObject.SetActive(false);
+    }
 }

@@ -14,7 +14,6 @@ public class ChangePanelOnClick : MonoBehaviour {
     int TOTAL_PANELS = 4;
 
     public void RightArrow() {
-        Debug.Log("clicked");
         Vector2 currentPosition = this.transform.localPosition;  //今いる場所
         int currentX = (int)currentPosition.x;  //今いるX値
         int panelNumber = -(currentX / PANEL_DISTANCE);  //1500分の1500 = 1となる

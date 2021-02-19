@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour {
     
+    private int MAX_BOX_LENGTH = 5;
     public static ItemBox instance;
     List<GameObject> boxes = new List<GameObject>();
     
@@ -12,11 +13,21 @@ public class ItemBox : MonoBehaviour {
     }
     //static化=どのファイルからでも参照できる
 
-    public void SetItem(GameObject itemObject) {
-        CreateItem(itemObject);
+    public bool SetItem(GameObject itemObject) {
+        return CreateItem(itemObject);
     }
 
-    public void ReleaseItem(GameObject itemInBoxGameObject) {
+    public bool HasKey() {
+        foreach(GameObject box in boxes) {
+            ReleaseItem releaseItem = box.GetComponent<HaveItem>().releaseGameObject.GetComponent<ReleaseItem>();
+            if(releaseItem.type == ReleaseItem.Type.key) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void ReleaseItemFromItemBox(GameObject itemInBoxGameObject) {
         HaveItem script = itemInBoxGameObject.GetComponent<HaveItem>();
         GameObject releaseObject = script.releaseGameObject;
         releaseObject.SetActive(true);
@@ -30,11 +41,13 @@ public class ItemBox : MonoBehaviour {
             index++;
         }
     }
-    //クリックした時、boxesの中から自分を消す
-    //落ちているアイテムのSetActiveをtrueに戻す
 
-    void CreateItem(GameObject releaseObject) {
+    bool CreateItem(GameObject releaseObject) {
         int count = boxes.Count;
+
+        if(count >= MAX_BOX_LENGTH) {
+            return false;
+        }
 
         ReleaseItem releaseItem = releaseObject.GetComponent<ReleaseItem>();
         GameObject HaveItemObj = (GameObject)Resources.Load(releaseItem.type.ToString()); 
@@ -44,6 +57,6 @@ public class ItemBox : MonoBehaviour {
         GameObject createHaveObj = (GameObject)Instantiate(HaveItemObj,new Vector2(count * 240 - 480, -1144),Quaternion.identity);
         createHaveObj.transform.SetParent (transform, false);
         boxes.Add(createHaveObj);
+        return true;
     }
-    //消した時に配列が何個か所得して左に詰める
 }

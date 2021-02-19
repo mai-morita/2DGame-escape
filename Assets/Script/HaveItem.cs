@@ -7,6 +7,6 @@ public class HaveItem : MonoBehaviour {
     public GameObject releaseGameObject;
 
     public void ReleaseItem() {
-        ItemBox.instance.ReleaseItem(gameObject); 
+        ItemBox.instance.ReleaseItemFromItemBox(gameObject); 
     }
 }
