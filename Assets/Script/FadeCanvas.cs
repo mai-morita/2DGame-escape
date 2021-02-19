@@ -59,7 +59,9 @@ public class FadeCanvas : MonoBehaviour {
     void KeepWhite() {
         fadeImage.enabled = true;
         count += fadeSpeed;
-        
+        if (SceneManager.GetActiveScene().name == "1stScene") {
+            SceneManager.LoadScene("2ndScene");
+        }
         if(count >= 1) {
             count = 0;
             keepWhite = false;

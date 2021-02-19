@@ -21,6 +21,7 @@ public class CountDown : MonoBehaviour {
     
     public void ShowPanel() {
         showObject.SetActive(true);
+		ReStartGame();
     }
  
 	void Update () {

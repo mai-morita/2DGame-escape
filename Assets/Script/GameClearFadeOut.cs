@@ -14,13 +14,6 @@ public class GameClearFadeOut : MonoBehaviour {
     float red, green, blue, alpha;
     float count = 0;
     Image fadeImage; 
-    public GameObject usePanel;
-
-    public void CanUseItem() {
-        if(ItemBox.instance.HasKey()){
-            StartFadeOut();
-        }
-    }
 
     void Start() {
         fadeImage = GetComponent<Image> ();
@@ -40,11 +33,11 @@ public class GameClearFadeOut : MonoBehaviour {
         if (fadeOut) {
             FadeOut();
         }
-        if(fadeIn) {
-            FadeIn();
-        }
         if(keepWhite) {
            KeepWhite();
+        }
+        if (fadeIn) {
+            FadeIn();
         }
     }
 
@@ -65,15 +58,15 @@ public class GameClearFadeOut : MonoBehaviour {
         }
         if(count >= 1) {
             count = 0;
-            fadeIn = false;
+            keepWhite = false;
+            fadeIn = true;
         }
     }
 
-    void FadeIn() {                                                                                                               
-        fadeImage.enabled = true;
+    void FadeIn() {
         alpha -= fadeSpeed;
         SetAlpha();
-        if(alpha <= 0) {
+        if(alpha <= 1) {
             fadeIn = false;
             fadeImage.enabled = false;
         }
