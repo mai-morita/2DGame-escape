@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5219713292160712427}
   - component: {fileID: 5219713292160712404}
   - component: {fileID: 5219713292160712426}
-  - component: {fileID: 3308351270673865694}
   - component: {fileID: -6931510723624687241}
   m_Layer: 5
   m_Name: card1
@@ -120,17 +119,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3308351270673865694}
-        m_MethodName: ItemHide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: -6931510723624687241}
         m_MethodName: ReleaseItem
         m_Mode: 1
@@ -142,19 +130,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3308351270673865694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5219713292160712406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08587fa35d6a54fa7babb3fa4ae16288, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
 --- !u!114 &-6931510723624687241
 MonoBehaviour:
   m_ObjectHideFlags: 0
