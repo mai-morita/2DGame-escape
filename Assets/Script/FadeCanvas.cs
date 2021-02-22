@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 //フェードインとフェードアウトに関するスクリプト
 
-public class FadeCanvas : MonoBehaviour {
+public class FadeCanvas : MonoBehaviour
+{
 
     public bool fadeIn = false;
     private bool fadeOut = false;
@@ -16,10 +17,11 @@ public class FadeCanvas : MonoBehaviour {
     public float fadeSpeed;
     float red, green, blue, alpha;
     float count = 0;
-    Image fadeImage;  
+    Image fadeImage;
 
-    void Start() {
-        fadeImage = GetComponent<Image> ();
+    void Start()
+    {
+        fadeImage = GetComponent<Image>();
         red = fadeImage.color.r;
         green = fadeImage.color.g;
         blue = fadeImage.color.b;
@@ -27,63 +29,79 @@ public class FadeCanvas : MonoBehaviour {
         fadeImage.enabled = false;
     }
 
-    public void StartFadeOut() {
+    public void StartFadeOut()
+    {
         fadeImage.enabled = true;
         fadeOut = true;
-    }  
-    public void StartFadeIn() {
+    }
+    public void StartFadeIn()
+    {
         fadeIn = true;
     }
 
-    void Update () {
-        if (fadeOut) {
+    void Update()
+    {
+        if (fadeOut)
+        {
             FadeOut();
         }
-        if(fadeIn) {
+        if (fadeIn)
+        {
             FadeIn();
         }
-        if(keepWhite) {
-           KeepWhite();
+        if (keepWhite)
+        {
+            KeepWhite();
         }
     }
 
-    void FadeOut() {
+    void FadeOut()
+    {
         alpha += fadeSpeed;
         SetAlpha();
-        if(alpha >= 1) {
+        if (alpha >= 1)
+        {
             fadeOut = false;
             keepWhite = true;
         }
     }
 
-    void KeepWhite() {
+    void KeepWhite()
+    {
         fadeImage.enabled = true;
         count += fadeSpeed;
-        if (SceneManager.GetActiveScene().name == "1stScene") {
+        if (SceneManager.GetActiveScene().name == "1stScene")
+        {
             SceneManager.LoadScene("2ndScene");
         }
-        if(count >= 1) {
+        if (count >= 1)
+        {
             count = 0;
             keepWhite = false;
         }
     }
 
-    void FadeIn() {
+    void FadeIn()
+    {
         fadeImage.enabled = true;
         alpha -= fadeSpeed;
         SetAlpha();
-        if(alpha <= 0) {
+        if (alpha <= 0)
+        {
             fadeIn = false;
             fadeImage.enabled = false;
         }
     }
 
-    void SetAlpha() {
-       fadeImage.color = new Color(red, green, blue, alpha);
+    void SetAlpha()
+    {
+        fadeImage.color = new Color(red, green, blue, alpha);
     }
 
-    public void CanUseItem() {
-        if(ItemBox.instance.HasKey()){
+    public void CanUseItem()
+    {
+        if (InItemBox.instance.HasKey())
+        {
             StartFadeOut();
         }
     }

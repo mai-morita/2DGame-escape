@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnMouseDown : MonoBehaviour {
+public class OnMouseDown : MonoBehaviour
+{
 
     //クリックした時　オブジェクトを表示する
 
@@ -13,20 +14,23 @@ public class OnMouseDown : MonoBehaviour {
     public GameObject usePanel;
 
 
-    public void Awake() {
+    public void Awake()
+    {
         showObject = GameObject.Find(showObjectName);
         showObject.SetActive(false);
     }
 
-    public void ShowPanel() {
+    public void ShowPanel()
+    {
         parentObject = showObject.transform.parent.gameObject;
         bool onParent = parentObject.activeSelf;
-        if(onParent) {
+        if (onParent)
+        {
             showObject.SetActive(true);
         }
     }
-
-    public void HidePanel() {
+    public void HidePanel()
+    {
         showObject.SetActive(false);
     }
 }

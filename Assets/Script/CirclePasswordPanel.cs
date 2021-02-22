@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class PasswordPanel : MonoBehaviour {
+public class CirclePasswordPanel : MonoBehaviour {
     
     int[] enteredPassword = new int[] {0, 1, 2};  //パスワードを入れる配列
     int[] correctPassword = new int[] {0, 1, 2};  //パスワードの解答
@@ -12,6 +12,7 @@ public class PasswordPanel : MonoBehaviour {
     public Image[] buttons;  //画像の配列
     public Sprite[] sprites;  //画像ソースの配列
     public GameObject usePanel;
+    public GameObject countObj;
 
     public void OnClickPassword(int position) {
         Debug.Log("password" + position);
@@ -38,6 +39,8 @@ public class PasswordPanel : MonoBehaviour {
     public void OnClickEnter() {
         if (enteredPassword.Intersect(correctPassword).Count() == enteredPassword.Count()) {
             Debug.Log("CLEAR");
+            CountDown timeStoper = countObj.GetComponent<CountDown>();
+            timeStoper.StopGame();
             FadeCanvas fadePanel = usePanel.GetComponent<FadeCanvas>();
             fadePanel.StartFadeOut();
             //フェードアウト開始

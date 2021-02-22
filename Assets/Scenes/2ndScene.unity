@@ -813,7 +813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &162699203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1203,7 +1203,7 @@ GameObject:
   - component: {fileID: 249695052}
   - component: {fileID: 249695051}
   m_Layer: 5
-  m_Name: PasswordPanel
+  m_Name: NumberPassword
   m_TagString: nextQuestionitems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,22 +1239,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 249695049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0efc1da042548d898f7d0ffdba82df, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d1b50644467a477e828084176c6206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1774599010}
-  sprites:
-  - {fileID: 21300000, guid: daf8646c5fed246619b588f8185063fc, type: 3}
-  - {fileID: 21300000, guid: 86d0d8da06a73441f9bd8fecb200c4da, type: 3}
-  - {fileID: 21300000, guid: 43f2ce13536754cddaf7e0f46df390b8, type: 3}
-  - {fileID: 21300000, guid: 1317cba762bd64cdaa6ee8c19d0d8de6, type: 3}
-  - {fileID: 21300000, guid: 8bc4ed891ee3b49478335f614de62b36, type: 3}
-  - {fileID: 21300000, guid: b62515a9443c24f6687a1201aaab137b, type: 3}
   usePanel: {fileID: 1401466281}
+  countObj: {fileID: 1450337646}
 --- !u!222 &249695052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1843,7 +1832,6 @@ GameObject:
   - component: {fileID: 259227058}
   - component: {fileID: 259227057}
   - component: {fileID: 259227056}
-  - component: {fileID: 259227055}
   - component: {fileID: 259227053}
   - component: {fileID: 259227054}
   m_Layer: 5
@@ -1866,7 +1854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showObjectName: key
-  parentObject: {fileID: 704278988}
+  parentObject: {fileID: 1270501410}
   usePanel: {fileID: 0}
 --- !u!114 &259227054
 MonoBehaviour:
@@ -1911,8 +1899,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 259227055}
-        m_MethodName: GetKey
+      - m_Target: {fileID: 259227056}
+        m_MethodName: ItemHide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1922,18 +1910,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &259227055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259227052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3187ae62531f84d508399d07b68ed970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &259227056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4272,9 +4248,8 @@ GameObject:
   m_Component:
   - component: {fileID: 685981563}
   - component: {fileID: 685981565}
-  - component: {fileID: 685981564}
   m_Layer: 5
-  m_Name: PasswordPanel
+  m_Name: Background
   m_TagString: nextQuestionitems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4307,35 +4282,6 @@ RectTransform:
   m_AnchoredPosition: {x: -450, y: -370.00003}
   m_SizeDelta: {x: 80, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &685981564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685981562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9811321, g: 0.87031215, b: 0.7728729, a: 0.64705884}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &685981565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4556,7 +4502,7 @@ RectTransform:
   - {fileID: 1803419782}
   - {fileID: 1132994993}
   m_Father: {fileID: 1445984386}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6458,17 +6404,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1450337649}
-        m_MethodName: StopGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1123162010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7272,7 +7207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1241051926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7607,7 +7542,7 @@ RectTransform:
   m_Children:
   - {fileID: 217410627}
   m_Father: {fileID: 1445984386}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7634,6 +7569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a2fed7036f541b48a944c32bfa2267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastQuestionObject: {fileID: 1948719100}
+  NumberPassword: {fileID: 249695049}
 --- !u!1 &1292816586
 GameObject:
   m_ObjectHideFlags: 0
@@ -7911,7 +7848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1331948410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8510,6 +8447,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 315600253}
+        m_MethodName: HidePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1401466284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8727,9 +8675,9 @@ RectTransform:
   m_Children:
   - {fileID: 771306055}
   - {fileID: 592453229}
+  - {fileID: 1637766032}
   - {fileID: 697542939}
   - {fileID: 1270501411}
-  - {fileID: 1637766032}
   - {fileID: 1214158880}
   - {fileID: 1450337647}
   - {fileID: 38388964}
@@ -9488,7 +9436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1520804343
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9700,17 +9648,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1450337649}
-        m_MethodName: StopGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10448,7 +10385,7 @@ RectTransform:
   - {fileID: 1356481090}
   - {fileID: 258706022}
   m_Father: {fileID: 1445984386}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11447,7 +11384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1825067062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12772,7 +12709,7 @@ GameObject:
   - component: {fileID: 2024873686}
   - component: {fileID: 2024873684}
   m_Layer: 5
-  m_Name: PasswordPanel
+  m_Name: CirclePassword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12826,6 +12763,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0d3778e857b3146c8a89604e64a2bcea, type: 3}
   - {fileID: 21300000, guid: 9c5205d7b67ca4d258bbe66894e5bcb6, type: 3}
   usePanel: {fileID: 1726987419}
+  countObj: {fileID: 1450337646}
 --- !u!222 &2024873686
 CanvasRenderer:
   m_ObjectHideFlags: 0

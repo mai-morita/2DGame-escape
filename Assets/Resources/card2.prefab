@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8391857160236297038}
   - component: {fileID: 8391857160236297039}
   - component: {fileID: 8776422134548869611}
+  - component: {fileID: 6560646534535265080}
   - component: {fileID: 8001345497368600877}
   m_Layer: 5
   m_Name: card2
@@ -130,6 +131,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6560646534535265080}
+        m_MethodName: ItemHide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6560646534535265080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391857160236297025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08587fa35d6a54fa7babb3fa4ae16288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!114 &8001345497368600877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,5 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2a4b2c16ccd45159d858ad81245764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseGameObjectName: card2(Clone)
   releaseGameObject: {fileID: 8391857160236297025}
