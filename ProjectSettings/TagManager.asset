@@ -9,6 +9,7 @@ TagManager:
   - finishedQuestionitems
   - story
   - KeyItem
+  - InPasswordBox
   layers:
   - Default
   - TransparentFX
