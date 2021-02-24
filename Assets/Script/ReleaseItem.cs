@@ -20,6 +20,9 @@ public class ReleaseItem : MonoBehaviour
         key = 7
     }
     public Type type;
+    public string lastQuestionObjectName;
+    GameObject lastQuestionObject;
+    public GameObject releaseGameObject;
 
     public void ItemHide()
     {
@@ -28,5 +31,25 @@ public class ReleaseItem : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+    public void InPasswordBoxItem()
+    {
+        lastQuestionObject = GameObject.Find(lastQuestionObjectName);
+        if (lastQuestionObject)
+        {
+            InPasswordBox presentItem = GameObject.FindWithTag("InPasswordBox").GetComponent<InPasswordBox>();
+            presentItem.CreateItemInPasswordBox(gameObject);
+        }
+        return;
+    }
+    public void ReturnInItemBox()
+    {
+        Debug.Log("111");
+        InItemBox.instance.SetItem(gameObject); //Itemの格納
+        Debug.Log("222");
+        InPasswordBox presentItem = GameObject.FindWithTag("InPasswordBox").GetComponent<InPasswordBox>();
+        Debug.Log("333");
+        presentItem.ReleaseItemInPasswordBox(gameObject);
+        Debug.Log("444");
     }
 }

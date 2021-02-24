@@ -32,12 +32,14 @@ public class InItemBox : MonoBehaviour
     }
     bool CreateItem(GameObject releaseObject)
     {
+        Debug.Log("555");
         int count = itemBoxes.Count;
 
         if (count >= MAX_ITEMBOX_LENGTH)
         {
             return false;
         }
+        Debug.Log("666");
         ReleaseItem releaseItem = releaseObject.GetComponent<ReleaseItem>();
         GameObject HaveItemObj = (GameObject)Resources.Load(releaseItem.type.ToString());
 

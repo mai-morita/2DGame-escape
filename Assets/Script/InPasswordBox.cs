@@ -9,37 +9,42 @@ public class InPasswordBox : MonoBehaviour
     List<ReleaseItem.Type> correctPassword = new List<ReleaseItem.Type>() { ReleaseItem.Type.card1, ReleaseItem.Type.card3, ReleaseItem.Type.card4, ReleaseItem.Type.card5 };  //パスワードの解答
     public GameObject usePanel;
     public GameObject countObj;
+    bool correct;
 
-    public bool CreateItemInPasswordBox(GameObject releaseObject)
+    public bool CreateItemInPasswordBox(GameObject inBoxItemObject)
     {
         int count = pwBoxes.Count;
         if (count >= MAX_PWBOX_LENGTH)
         {
             return false;
         }
-        ReleaseItem releaseItem = releaseObject.GetComponent<ReleaseItem>();
-        GameObject HaveItemObj = (GameObject)Resources.Load(releaseItem.type.ToString() + "_inPasswordBox");
-        HaveItemObj.GetComponent<HaveItem>().releaseGameObject = releaseObject;
+        ReleaseItem inBoxItemScript = inBoxItemObject.GetComponent<ReleaseItem>();
+        GameObject inBoxItemObj = (GameObject)Resources.Load(inBoxItemScript.type.ToString() + "_inPasswordBox");
+        inBoxItemObj.GetComponent<ReleaseItem>().releaseGameObject = inBoxItemObject;
 
-        GameObject createPasswordObj = (GameObject)Instantiate(HaveItemObj, new Vector2(count * 300 - 450, -360), Quaternion.identity);
+        GameObject createPasswordObj = (GameObject)Instantiate(inBoxItemObj, new Vector2(count * 300 - 450, -360), Quaternion.identity);
         createPasswordObj.transform.SetParent(transform, false);
         pwBoxes.Add(createPasswordObj);
         return true;
     }
     public void ReleaseItemInPasswordBox(GameObject itemInBoxGameObject)
     {
+        Debug.Log("777");
         HaveItem script = itemInBoxGameObject.GetComponent<HaveItem>();
         GameObject releaseObject = script.releaseGameObject;
 
         pwBoxes.Remove(itemInBoxGameObject);
         Destroy(itemInBoxGameObject);
 
+
         int index = 0;
         foreach (GameObject pw in pwBoxes)
         {
+            Debug.Log("888");
             pw.GetComponent<RectTransform>().anchoredPosition = new Vector2(index * 300 - 450, -360);
             index++;
         }
+        Debug.Log("999");
     }
     bool CorrectPasswordCheker()
     {
@@ -48,7 +53,7 @@ public class InPasswordBox : MonoBehaviour
             return false;
         }
         int i = 0;
-        bool correct = true;
+        correct = true;
         foreach (GameObject pw in pwBoxes)
         {
             if (correctPassword[i] != pw.GetComponent<ReleaseItem>().type)
@@ -63,10 +68,10 @@ public class InPasswordBox : MonoBehaviour
 
     public void OnClickEnter()
     {
-        CorrectPasswordCheker();
         bool correctFlag = CorrectPasswordCheker();
         if (!correctFlag)
         {
+            Debug.Log("MISS");
             return;
         }
         if (correctFlag)
@@ -77,10 +82,6 @@ public class InPasswordBox : MonoBehaviour
             FadeCanvas fadePanel = usePanel.GetComponent<FadeCanvas>();
             fadePanel.StartFadeOut();
             //フェードアウト開始
-        }
-        else
-        {
-            Debug.Log("MISS");
         }
     }
     // 答えあわせ

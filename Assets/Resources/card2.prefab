@@ -131,6 +131,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8430648297446363615}
+        m_MethodName: InPasswordBoxItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8001345497368600877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseGameObject: {fileID: 8391857160236297025}
-  lastQuestionObjectName: Question10
 --- !u!114 &8430648297446363615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +168,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  lastQuestionObjectName: Question10
+  releaseGameObject: {fileID: 8391857160236297025}

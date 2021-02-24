@@ -12,16 +12,10 @@ public class HaveItem : MonoBehaviour
     public void ReleaseItem()
     {
         lastQuestionObject = GameObject.Find(lastQuestionObjectName);
-        if (lastQuestionObject)
+        if (!lastQuestionObject)
         {
-            InPasswordBox presentItem = GameObject.FindWithTag("InPasswordBox").GetComponent<InPasswordBox>();
-            presentItem.CreateItemInPasswordBox(gameObject);
-            InItemBox.instance.ReleaseItemFromItemBox(gameObject);
-        }
-        else
-        {
-            InItemBox.instance.ReleaseItemFromItemBox(gameObject);
             gameObject.SetActive(true);
         }
+        InItemBox.instance.ReleaseItemFromItemBox(gameObject);
     }
 }

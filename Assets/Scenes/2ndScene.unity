@@ -813,7 +813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &162699203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1358,6 +1358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &250709206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,6 +1911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 7
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &259227057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,6 +3074,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &452222593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3264,6 +3270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &454331204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5405,6 +5413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &796492854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6090,6 +6100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &1039405001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7252,7 +7264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1241051926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7614,6 +7626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a2fed7036f541b48a944c32bfa2267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastQuestionObjectName: Question10
 --- !u!1 &1292816586
 GameObject:
   m_ObjectHideFlags: 0
@@ -7891,7 +7904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1331948410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9479,7 +9492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1520804343
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9964,6 +9977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &1589619199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10926,6 +10941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 0}
 --- !u!114 &1736611522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11427,7 +11444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1825067062
 RectTransform:
   m_ObjectHideFlags: 0
