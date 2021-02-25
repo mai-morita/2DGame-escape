@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseGameObject: {fileID: 3838091462829936149}
+  lastQuestionObjectName: 
 --- !u!114 &-2143537001330941259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,3 +169,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  lastQuestionObjectName: 
+  releaseGameObject: {fileID: 3838091462829936149}

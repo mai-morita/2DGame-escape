@@ -44,12 +44,9 @@ public class ReleaseItem : MonoBehaviour
     }
     public void ReturnInItemBox()
     {
-        Debug.Log("111");
         InItemBox.instance.SetItem(gameObject); //Itemの格納
-        Debug.Log("222");
         InPasswordBox presentItem = GameObject.FindWithTag("InPasswordBox").GetComponent<InPasswordBox>();
-        Debug.Log("333");
         presentItem.ReleaseItemInPasswordBox(gameObject);
-        Debug.Log("444");
     }
+
 }

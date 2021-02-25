@@ -29,22 +29,18 @@ public class InPasswordBox : MonoBehaviour
     }
     public void ReleaseItemInPasswordBox(GameObject itemInBoxGameObject)
     {
-        Debug.Log("777");
         HaveItem script = itemInBoxGameObject.GetComponent<HaveItem>();
         GameObject releaseObject = script.releaseGameObject;
 
         pwBoxes.Remove(itemInBoxGameObject);
         Destroy(itemInBoxGameObject);
 
-
         int index = 0;
         foreach (GameObject pw in pwBoxes)
         {
-            Debug.Log("888");
             pw.GetComponent<RectTransform>().anchoredPosition = new Vector2(index * 300 - 450, -360);
             index++;
         }
-        Debug.Log("999");
     }
     bool CorrectPasswordCheker()
     {
@@ -72,9 +68,8 @@ public class InPasswordBox : MonoBehaviour
         if (!correctFlag)
         {
             Debug.Log("MISS");
-            return;
         }
-        if (correctFlag)
+        else
         {
             Debug.Log("CLEAR");
             CountDown timeStoper = countObj.GetComponent<CountDown>();

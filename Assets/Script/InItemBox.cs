@@ -8,7 +8,9 @@ public class InItemBox : MonoBehaviour
     public static InItemBox instance;
     public string lastQuestionObjectName;
     GameObject lastQuestionObject;
+    GameObject InBoxShowItem;
     List<GameObject> itemBoxes = new List<GameObject>();
+
     void Start()
     {
         instance = this;
@@ -32,18 +34,17 @@ public class InItemBox : MonoBehaviour
     }
     bool CreateItem(GameObject releaseObject)
     {
-        Debug.Log("555");
         int count = itemBoxes.Count;
 
         if (count >= MAX_ITEMBOX_LENGTH)
         {
             return false;
         }
-        Debug.Log("666");
         ReleaseItem releaseItem = releaseObject.GetComponent<ReleaseItem>();
         GameObject HaveItemObj = (GameObject)Resources.Load(releaseItem.type.ToString());
 
         HaveItemObj.GetComponent<HaveItem>().releaseGameObject = releaseObject;
+
 
         GameObject createHaveObj = (GameObject)Instantiate(HaveItemObj, new Vector2(count * 240 - 480, -1144), Quaternion.identity);
         createHaveObj.transform.SetParent(transform, false);
@@ -55,15 +56,13 @@ public class InItemBox : MonoBehaviour
         HaveItem script = itemInBoxGameObject.GetComponent<HaveItem>();
         GameObject releaseObject = script.releaseGameObject;
 
-        itemBoxes.Remove(itemInBoxGameObject);
-        Destroy(itemInBoxGameObject);
-
         lastQuestionObject = GameObject.Find(lastQuestionObjectName);
         if (!lastQuestionObject)
         {
             releaseObject.SetActive(true);
         }
-
+        itemBoxes.Remove(itemInBoxGameObject);
+        Destroy(itemInBoxGameObject);
         int index = 0;
         foreach (GameObject box in itemBoxes)
         {
